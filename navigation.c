@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 struct Node {
     char url[20];
     struct Node *prev;
     struct Node *next;
 };
-
 int main() {
     struct Node *current = NULL;
     int choice;
@@ -25,8 +23,6 @@ int main() {
         if (choice == 1) {
             printf("Enter URL: ");
             scanf("%19s", url);
-
-            // Create new node
             struct Node *newNode = (struct Node*) malloc(sizeof(struct Node));
             if (newNode == NULL) {
                 printf("Memory allocation failed\n");
@@ -37,10 +33,10 @@ int main() {
             newNode->next = NULL;
 
             if (current == NULL) {
-                // First page visited
+             
                 current = newNode;
             } else {
-                // Remove forward history using for loop
+               
                 for (struct Node *temp = current->next; temp != NULL;) {
                     struct Node *nextNode = temp->next;
                     free(temp);

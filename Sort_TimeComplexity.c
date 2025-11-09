@@ -14,17 +14,13 @@ int main() {
         scanf("%d", &sortedarr[i]);
         count++;
     }
-
     printf("Enter the number to be searched\n");
     scanf("%d", &key);
     count++;
-
     int s = 0, e = n - 1;
-
     while (s <= e) {
         int m = (s + e) / 2;
         count++;
-
         if (sortedarr[m] == key) {
             count++;
             printf("Element found in index %d\n", m);
@@ -40,14 +36,11 @@ int main() {
             count++;
         }
     }
-
     if (flag == 0) {
         printf("Number not found\n");
     }
-
     int space = 8 + 4 + n * 4;  
     printf("Space complexity = %d bytes\n", space);
     printf("Time complexity = %d units\n", count);
-
     return 0;
 }
